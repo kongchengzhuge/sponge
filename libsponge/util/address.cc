@@ -8,6 +8,7 @@
 #include <netdb.h>
 #include <stdexcept>
 #include <system_error>
+#include <iostream>
 
 using namespace std;
 
@@ -97,6 +98,7 @@ pair<string, uint16_t> Address::ip_port() const {
         throw tagged_error(gai_error_category(), "getnameinfo", gni_ret);
     }
 
+    cout<< ip.data() << '-' << stoi(port.data()) << endl;
     return {ip.data(), stoi(port.data())};
 }
 

@@ -1,6 +1,8 @@
 #ifndef SPONGE_LIBSPONGE_BYTE_STREAM_HH
 #define SPONGE_LIBSPONGE_BYTE_STREAM_HH
 
+#include "buffer.hh"
+
 #include <string>
 
 //! \brief An in-order byte stream.
@@ -16,7 +18,12 @@ class ByteStream {
     // all, but if any of your tests are taking longer than a second,
     // that's a sign that you probably want to keep exploring
     // different approaches.
-
+    bool IsInputEnding{false}; 
+    BufferList bufferlist{};
+    size_t _capacity{};
+    size_t _size{};
+    size_t write_bytes{};
+    size_t read_bytes{};
     bool _error{};  //!< Flag indicating that the stream suffered an error.
 
   public:

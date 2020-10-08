@@ -16,7 +16,7 @@ class Address {
     //! \details A `sockaddr_storage` is enough space to store any socket address (IPv4 or IPv6).
     class Raw {
       public:
-        sockaddr_storage storage{};  //!< The wrapped struct itself.
+        sockaddr_storage storage{};  //!< The wrapped struct itself.default init, cpp11 new 
         operator sockaddr *();
         operator const sockaddr *() const;
     };

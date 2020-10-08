@@ -9,7 +9,9 @@
 #include <stdexcept>
 #include <sys/socket.h>
 #include <vector>
+#include <iostream>
 
+using namespace std;
 int main() {
     try {
         {
