@@ -15,6 +15,10 @@ class WrappingInt32 {
     explicit WrappingInt32(uint32_t raw_value) : _raw_value(raw_value) {}
 
     uint32_t raw_value() const { return _raw_value; }  //!< Access raw stored value
+    inline WrappingInt32 &operator-=(WrappingInt32 b) {
+        this->_raw_value -= b._raw_value;
+        return *this;
+    }
 };
 
 //! Transform a 64-bit absolute sequence number (zero-indexed) into a 32-bit relative sequence number
